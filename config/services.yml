@@ -1,0 +1,6 @@
+services:
+
+    cubadevops.customhtml.migrate_command:
+        class: CubaDevOps\CustomHtml\Command\MigrateCommand
+        tags:
+            - { name: 'console.command', command: 'customhtml:migrate' }

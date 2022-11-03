@@ -1,0 +1,43 @@
+{
+  "name": "cbatista8a/customhtml",
+  "description": "A base prestashop module for development",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cuba DevOps",
+      "email": "info@cubadevops.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CubaDevOps\\CustomHtml\\" : "src/"
+    },
+    "classmap": [
+      "controllers",
+      "classes",
+      "customhtml.php",
+      "src/Command/"
+    ]
+  },
+  "require": {
+    "php": ">=7.0",
+    "illuminate/database": "^8.83",
+    "illuminate/events": "^8.83"
+  }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "prestashop/autoindex": "*",
+    "friendsofphp/php-cs-fixer": "*",
+    "phpunit/phpunit": "*",
+    "doctrine/migrations": "^3.4"
+  },
+  "config": {
+    "prepend-autoloader": false
+  },
+  "type": "prestashop-module",
+  "scripts": {
+    "format" : "./vendor/bin/php-cs-fixer fix . --rules=@PSR12,@Symfony --verbose"
+  }
+}

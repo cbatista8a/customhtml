@@ -1,0 +1,36 @@
+block_list:
+  path: customhtml/block/list
+  methods: [GET]
+  defaults:
+    _controller: 'CubaDevOps\CustomHtml\controllers\admin\BlockController::list'
+    _disable_module_prefix: true
+
+block_create:
+  path: customhtml/block/create
+  methods: [GET]
+  defaults:
+    _controller: 'CubaDevOps\CustomHtml\controllers\admin\BlockController::create'
+    _disable_module_prefix: true
+
+block_edit:
+  path: customhtml/block/edit/{id}
+  methods: [GET]
+  defaults:
+    _controller: 'CubaDevOps\CustomHtml\controllers\admin\BlockController::create'
+    _disable_module_prefix: true
+
+block_save:
+  path: customhtml/block/save/{id}
+  methods: [POST]
+  defaults:
+    _controller: 'CubaDevOps\CustomHtml\controllers\admin\BlockController::save'
+    _disable_module_prefix: true
+
+block_delete:
+  path: customhtml/block/delete/{id}
+  methods: [POST]
+  defaults:
+    _controller: 'CubaDevOps\CustomHtml\controllers\admin\BlockController::delete'
+    _disable_module_prefix: true
+
+#    Todo attach csrf token automatically to route url for prevent error on BO

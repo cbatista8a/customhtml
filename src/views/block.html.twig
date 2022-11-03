@@ -1,0 +1,30 @@
+{% extends '@PrestaShop/Admin/layout.html.twig' %}
+{% trans_default_domain 'Modules.CustomHtml.Admin' %}
+{% block content %}
+    <div class="container">
+    </div>
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="block_name" class="form-label">{{ 'Name'| trans }}</label>
+                <input type="text" class="form-control" id="block_name" name="name" value="{{ block.name }}">
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="hook_selector">{{ "Hook"|trans }}</label>
+                <select class="form-select" id="hook_selector" name="hook" value="{{ block.hook }}">
+                    <option selected>Choose...</option>
+                    {% for hook in hooks %}
+                    <option value="{{ hook }}">{{ hook }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="block_content" class="form-label">{{ "Custom HTML"|trans }}</label>
+                <textarea class="form-control" id="block_content" name="content" rows="3">
+                    {{ block.content }}
+                </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}
