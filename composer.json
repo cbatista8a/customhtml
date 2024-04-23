@@ -28,13 +28,16 @@
   ,
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "prestashop/autoindex": "*",
-    "friendsofphp/php-cs-fixer": "*",
-    "phpunit/phpunit": "*",
-    "doctrine/migrations": "^3.4"
+    "prestashop/autoindex": "^2.1",
+    "doctrine/migrations": "^3.4",
+    "phpunit/phpunit": "^9.6",
+    "friendsofphp/php-cs-fixer": "^3.54"
   },
   "config": {
-    "prepend-autoloader": false
+    "prepend-autoloader": false,
+    "platform": {
+      "php": "7.4"
+    }
   },
   "type": "prestashop-module",
   "scripts": {
