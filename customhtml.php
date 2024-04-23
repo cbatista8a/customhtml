@@ -90,7 +90,7 @@ class CustomHtml extends Module implements WidgetInterface
     {
         $hooks = [
             'header',
-            'backOfficeHeader',
+            'displayBackOfficeHeader',
             'moduleRoutes',
         ];
 
@@ -554,7 +554,7 @@ class CustomHtml extends Module implements WidgetInterface
     /**
      * Add the CSS & JavaScript files you want to be loaded in the BO.
      */
-    public function hookBackOfficeHeader()
+    public function hookdisplayBackOfficeHeader()
     {
         if (Tools::getValue('configure') === $this->name) {
             $this->context->controller->addJS('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js');
