@@ -40,7 +40,7 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Format Code
-        run: composer run-script format && composer run-script minify
+        run: composer run-script format
 
       - name: Autoindex and Build
         run: composer run-script index && composer run-script clean
