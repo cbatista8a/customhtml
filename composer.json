@@ -41,6 +41,10 @@
   },
   "type": "prestashop-module",
   "scripts": {
-    "format" : "./vendor/bin/php-cs-fixer fix . --rules=@PSR12,@Symfony --verbose"
+    "index": "./vendor/bin/autoindex prestashop:add:index .",
+    "format": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist .",
+    "test": "./vendor/bin/phpunit tests",
+    "clean": "rm -rf ./.git ./.github ./tests ./.gitignore ./.php-cs-fixer.cache ./.php-cs-fixer.dist"
+
   }
 }
