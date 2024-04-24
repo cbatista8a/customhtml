@@ -14,8 +14,6 @@
       "CubaDevOps\\CustomHtml\\" : "src/"
     },
     "classmap": [
-      "controllers",
-      "classes",
       "customhtml.php",
       "src/Command/"
     ]
