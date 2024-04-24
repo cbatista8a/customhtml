@@ -51,7 +51,13 @@ jobs:
           composer install --no-dev
           cp ./index.php ./vendor/composer/index.php
           cp ./index.php ./vendor/index.php
-          zip -r customhtml.zip .
+
+      - name: Create Zip
+        run: |
+           mkdir .customhtml
+           cp * .customhtml
+           mv .customhtml customhtml
+           zip -r customhtml.zip customhtml
 
       - name: Build Artifact
         uses: ncipollo/release-action@v1.12.0
