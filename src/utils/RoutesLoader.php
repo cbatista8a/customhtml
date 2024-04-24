@@ -17,6 +17,10 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Yaml\Yaml;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class RoutesLoader
 {
     /**

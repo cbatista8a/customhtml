@@ -5,6 +5,10 @@ namespace CubaDevOps\CustomHtml\entities;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class BlockLang extends Model
 {
     protected $table = 'customhtml_blocks_lang';

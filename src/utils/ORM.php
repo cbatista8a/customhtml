@@ -9,6 +9,10 @@ use Illuminate\Database\Schema\Builder;
 use Illuminate\Events\Dispatcher;
 use PDO;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class ORM extends Capsule
 {
     private function __construct()

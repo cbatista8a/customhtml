@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Tools;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class MigrateCommand extends DoctrineCommand
 {
     protected static $defaultName = 'customhtml:migrate';

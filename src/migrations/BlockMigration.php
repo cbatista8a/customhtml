@@ -6,6 +6,10 @@ use CubaDevOps\CustomHtml\utils\ORM;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class BlockMigration extends Migration
 {
     public static function up()

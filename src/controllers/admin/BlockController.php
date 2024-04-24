@@ -18,6 +18,10 @@ use CubaDevOps\CustomHtml\entities\Block;
 use CubaDevOps\CustomHtml\utils\ORM;
 use Hook;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class BlockController extends AbstractController
 {
     public function create()

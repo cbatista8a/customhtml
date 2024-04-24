@@ -5,6 +5,10 @@ namespace CubaDevOps\CustomHtml\controllers;
 use CubaDevOps\CustomHtml\utils\ORM;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 abstract class AbstractController extends FrameworkBundleAdminController
 {
     /**
