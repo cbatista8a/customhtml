@@ -296,7 +296,7 @@ class CustomHtml extends Module implements WidgetInterface
      */
     protected function getConfigFormValues(): array
     {
-        if (empty($_GET['id_block']) || (isset($_GET['action']) && 'edit' !== $_GET['action'])) {
+        if (!Tools::getIsset('id_block') || (Tools::getIsset('action') && 'edit' !== Tools::getValue('action'))) {
             return [
                 self::PREFIX.'ID' => '',
                 self::PREFIX.'NAME' => '',
@@ -308,7 +308,7 @@ class CustomHtml extends Module implements WidgetInterface
         }
 
         /** @var Block $block */
-        $block = Block::findOrFail((int) $_GET['id_block']);
+        $block = Block::findOrFail((int) Tools::getValue('id_block'));
         $content = [];
         /* @var BlockLang $content */
         foreach ($block->contents as $block_content) {
@@ -330,7 +330,7 @@ class CustomHtml extends Module implements WidgetInterface
         return [
             'form' => [
                 'legend' => [
-                    'title' => isset($_GET['id_block']) ? $this->l('Edit Block') : $this->l('New Block'),
+                    'title' => Tools::getIsset('id_block') ? $this->l('Edit Block') : $this->l('New Block'),
                     'icon' => 'icon-cogs',
                 ],
                 'input' => [
@@ -404,7 +404,7 @@ class CustomHtml extends Module implements WidgetInterface
                     ],
                 ],
                 'submit' => [
-                    'title' => isset($_GET['id_block']) ? $this->l('Save') : $this->l('Add'),
+                    'title' => Tools::getIsset('id_block') ? $this->l('Save') : $this->l('Add'),
                 ],
             ],
         ];
