@@ -177,11 +177,11 @@ class CustomHtml extends Module implements WidgetInterface
             $this->redirectToMainController();
         }
         if (true === Tools::isSubmit('statuscustomhtml_blocks')) {
-            $this->toggleStatus((int) $_GET['id']);
+            $this->toggleStatus((int) Tools::getValue('id'));
             $this->redirectToMainController();
         }
-        if (isset($_GET['action']) && 'destroy' === $_GET['action']) {
-            $this->deleteBlock((int) $_GET['id_block']);
+        if (Tools::getIsset('action') && 'destroy' === Tools::getValue('action')) {
+            $this->deleteBlock((int) Tools::getValue('id_block'));
             $this->redirectToMainController();
         }
     }
@@ -669,15 +669,18 @@ class CustomHtml extends Module implements WidgetInterface
 
     protected function getConfigValue($key, $lang = null, $default = null)
     {
+        $value = null;
         switch ($this->shop_context) {
             case Shop::CONTEXT_SHOP:
-                return Configuration::get($key, $lang, $this->shop_group, $this->shop_id, $default);
+                $value = Configuration::get($key, $lang, $this->shop_group, $this->shop_id, $default);
                 break;
             case Shop::CONTEXT_GROUP:
-                return Configuration::get($key, $lang, $this->shop_group, null, $default);
+                $value = Configuration::get($key, $lang, $this->shop_group, null, $default);
                 break;
+            default:
+                $value = Configuration::get($key, $lang, null, null, $default);
         }
 
-        return Configuration::get($key, $lang, null, null, $default);
+        return $value;
     }
 }

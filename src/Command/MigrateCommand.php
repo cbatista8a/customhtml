@@ -71,7 +71,7 @@ class MigrateCommand extends DoctrineCommand
      */
     private function getAbsoluteClassNameFromFile($file_path): string
     {
-        $tokens = PhpToken::tokenize(file_get_contents($file_path));
+        $tokens = PhpToken::tokenize(Tools::file_get_contents($file_path));
         $namespace = [];
         foreach ($tokens as $index => $token) {
             if ($token->is(T_NAMESPACE) && $tokens[$index + 2]->is(T_STRING)) {
