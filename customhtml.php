@@ -46,7 +46,7 @@ class CustomHtml extends Module implements WidgetInterface
     {
         $this->name = 'customhtml';
         $this->tab = 'administration';
-        $this->version = '1.4.1';
+        $this->version = '1.4.2';
         $this->author = 'CubaDevOps';
         $this->need_instance = 1;
         $this->bootstrap = true;
