@@ -55,7 +55,7 @@ jobs:
       - name: Create Zip
         run: |
            mkdir .customhtml
-           cp * .customhtml
+           cp -r * .customhtml
            mv .customhtml customhtml
            zip -r customhtml.zip customhtml
 
